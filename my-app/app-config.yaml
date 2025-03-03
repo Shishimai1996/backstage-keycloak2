@@ -10,8 +10,9 @@ backend:
   # See https://backstage.io/docs/auth/service-to-service-auth for
   # information on the format
   # auth:
-  #   keys:
-  #     - secret: ${BACKEND_SECRET}
+    # externalAccess:
+    #   - type: 'oidc'
+    #   - secret: ${BACKEND_SECRET}
   baseUrl: http://localhost:7007
   listen:
     port: 7007
@@ -67,7 +68,7 @@ auth:
     secret: ${SESSION_SECRET}
   environment: development
   # enableExperimentalRedirectFlow: true
-  visibility: public
+  # visibility: public
   providers:
     oidc:
       development:
@@ -75,6 +76,12 @@ auth:
         clientId: ${AUTH_MY_CLIENT_ID}
         clientSecret: ${AUTH_MY_CLIENT_SECRET}
         additionalScopes: openid profile email
+        prompt: auto
+        authorizationUrl: http://localhost:8080/realms/myrealm/protocol/openid-connect/auth
+        tokenUrl: http://localhost:8080/realms/myrealm/protocol/openid-connect/token
+        logoutUrl: http://localhost:8080/realms/myrealm/protocol/openid-connect/logout
+        scopes: "openid profile email"
+        redirectUri: http://localhost:7007/auth/oidc/handler/frame
         # ...
         # signIn:
         #   resolvers:

@@ -12327,7 +12327,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:^29.5.11":
+"@types/jest@npm:^29.5.11, @types/jest@npm:^29.5.14":
   version: 29.5.14
   resolution: "@types/jest@npm:29.5.14"
   dependencies:
@@ -28633,6 +28633,8 @@ __metadata:
     "@backstage/plugin-proxy-backend": "npm:^0.5.11"
     "@playwright/test": "npm:^1.32.3"
     "@types/dotenv": "npm:^8.2.3"
+    "@types/jest": "npm:^29.5.14"
+    "@types/react": "npm:^19.0.10"
     dotenv: "npm:^16.4.7"
     node-gyp: "npm:^11.1.0"
     prettier: "npm:^2.3.2"

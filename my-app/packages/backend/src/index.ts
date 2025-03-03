@@ -10,7 +10,7 @@ import * as dotenv from 'dotenv';
 dotenv.config({ path: '../../.env' });
 import { createBackend } from '@backstage/backend-defaults';
 
-import myBackendModuleModuleMyBackendModule from '@internal/plugin-my-backend-module-backend-module-my-backend-module';
+import myBackendModuleModuleMyBackendModule from '@internal/plugin-my-backend-module-backend-module-my-backend-module/src/index';
 const backend = createBackend();
 console.log('AUTH_REALM_URL:', process.env.AUTH_REALM_URL);
 console.log('AUTH_MY_CLIENT_ID:', process.env.AUTH_MY_CLIENT_ID);
@@ -58,8 +58,8 @@ backend.add(import('@backstage/plugin-search-backend-module-techdocs'));
 // kubernetes
 backend.add(import('@backstage/plugin-kubernetes-backend'));
 
-backend.add(import('@backstage/plugin-auth-backend-module-oidc-provider'));
+// backend.add(import('@backstage/plugin-auth-backend-module-oidc-provider'));
 
-backend.add(myBackendModuleModuleMyBackendModule);
-
+// backend.add(myBackendModuleModuleMyBackendModule);
+backend.add(import('./modules/auths/authProvidersModule'));
 backend.start();

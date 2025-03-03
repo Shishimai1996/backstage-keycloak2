@@ -37,7 +37,6 @@ import { CatalogGraphPage } from '@backstage/plugin-catalog-graph';
 import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
 import { apis, oidcAuthApiRef } from './apis';
-import { configApiRef, useApi } from '@backstage/core-plugin-api';
 
 const app = createApp({
   apis,
@@ -86,12 +85,14 @@ const app = createApp({
       <SignInPage
         {...props}
         auto
-        provider={{
-          id: 'oidc',
-          title: 'oidc',
-          message: 'Sign in using oidc',
-          apiRef: oidcAuthApiRef,
-        }}
+        providers={[
+          {
+            id: 'oidc',
+            title: 'oidc Login',
+            message: 'Sign in using oidc',
+            apiRef: oidcAuthApiRef,
+          },
+        ]}
       />
     ),
   },
