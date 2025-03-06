@@ -75,13 +75,13 @@ auth:
         metadataUrl: ${AUTH_REALM_URL}/.well-known/openid-configuration
         clientId: ${AUTH_MY_CLIENT_ID}
         clientSecret: ${AUTH_MY_CLIENT_SECRET}
-        additionalScopes: openid profile email
-        prompt: auto
-        authorizationUrl: http://localhost:8080/realms/myrealm/protocol/openid-connect/auth
-        tokenUrl: http://localhost:8080/realms/myrealm/protocol/openid-connect/token
-        logoutUrl: http://localhost:8080/realms/myrealm/protocol/openid-connect/logout
+        # additionalScopes: openid profile email
+        # prompt: auto
+        # authorizationUrl: http://localhost:8080/realms/myrealm/protocol/openid-connect/auth
+        # tokenUrl: http://localhost:8080/realms/myrealm/protocol/openid-connect/token
+        # logoutUrl: http://localhost:8080/realms/myrealm/protocol/openid-connect/logout
         scopes: "openid profile email"
-        redirectUri: http://localhost:7007/auth/oidc/handler/frame
+        # redirectUri: http://localhost:7007/auth/oidc/handler/frame
         # ...
         # signIn:
         #   resolvers:
